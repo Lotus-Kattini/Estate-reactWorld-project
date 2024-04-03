@@ -1,0 +1,88 @@
+@import '../../responsive.scss';
+
+.searchbar{
+    .type{
+        display: flex;
+        align-items: center;
+        button{
+            padding: 16px 36px;
+            outline: none;
+            overflow: hidden;
+            background-color: transparent;
+            border: 1px solid #999;
+            transition: all 0.5s ease;
+            text-transform: capitalize;
+            border-bottom: none;
+            cursor: pointer;
+            &.active{
+                background-color: black;
+                color: #fff;
+            }
+            &:first-child{
+                border-top-left-radius: 5px;
+                border-right: none;
+            }
+            &:last-child{
+                border-top-right-radius: 5px;
+                border-left:none;
+            }
+        }
+    }
+
+    form{
+        display: flex;
+        border: 1px solid #999;
+        justify-content: space-between;
+        gap: 5px;
+        height: 64px;
+
+        @include sm{
+            flex-direction: column;
+            border: none;
+        }
+
+        input{
+            padding: 0 10px;
+            border: none;
+            outline: none;
+            width: 200px;
+            @include lg{
+                padding: 0 5px;
+                &:nth-child(2),&:nth-child(3){
+                    width: 140px;
+                }
+                
+            }
+            // @include md{
+            //     width: auto;
+            //     &:nth-child(2),&:nth-child(3){
+            //         width: auto;
+            //     }
+            // }
+
+            @include sm{
+                width: auto;
+                padding: 20px;
+                border: 1px solid #999;
+                &:nth-child(2),&:nth-child(3){
+                    width: auto;
+                }
+            }
+        }
+        button{
+            border: none;
+            background-color: #fece51;
+            cursor: pointer;
+            flex: 1;
+            @include sm{
+                padding: 10px;
+            }
+
+            img{
+                width: 24px;
+                height: 24px;
+                object-fit: contain;
+            }
+        }
+    }
+}
